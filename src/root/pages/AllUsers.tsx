@@ -10,8 +10,10 @@ const AllUsers = () => {
   const { data: creators, isLoading, isError: isErrorCreators } = useGetUsers();
 
   if (isErrorCreators) {
-    return toast({ title: "Something went wrong." });
+    toast({ title: "Something went wrong." });
+    return;
   }
+
   return (
     <div className="common-container">
     <div className="user-container">
