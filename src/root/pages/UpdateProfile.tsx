@@ -1,6 +1,8 @@
 const UpdateProfile = () => {
   return (
-    <div>UpdateProfile</div>
+    <div>
+      Edit Profile
+    </div>
   )
 }
 

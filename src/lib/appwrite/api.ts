@@ -241,6 +241,9 @@ export async function getPostById(postId: string) {
       appWriteConfig.postCollectionId,
       postId
     );
+
+    if(!post) throw Error;
+
     return post;
   } catch (error) {
     console.log(error);
@@ -376,3 +379,18 @@ export async function getUsers(limit?: number) {
   }
 };
 
+export async function getUserById(userId: string) {
+  try {
+    const user = await databases.getDocument(
+      appWriteConfig.databaseId,
+      appWriteConfig.userCollectionId,
+      userId
+    );
+
+    if(!user) throw Error;
+
+    return user;
+  } catch (error) {
+    console.log(error);
+  }
+}
